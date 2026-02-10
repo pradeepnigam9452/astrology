@@ -1,46 +1,73 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Contact Form</title>
-</head>
-<body>
+<section class="services">
+  <div class="services-wrapper">
 
-<form id="contact-form">
-  <input type="text" name="name" placeholder="Your Name" required />
-  <input type="email" name="email" placeholder="Your Email" required />
-  <textarea name="message" placeholder="Your Message" required></textarea>
-  <button type="submit">Send</button>
-</form>
+    <!-- LEFT CONTENT -->
+    <div class="services-left">
+      <span class="small-title">Services</span>
+      <h2>Our Best<br>Services</h2>
+      <p>
+        They provide free horoscope astrology
+        by analyzing your zodiac sign.
+      </p>
+    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <!-- RIGHT SLIDER -->
+    <div class="services-right">
 
-<script>
-  (function () {
-    emailjs.init("YOUR_PUBLIC_KEY");
-  })();
+      <button class="slider-btn prev" onclick="slideServices(-1)">❮</button>
 
-  document
-    .getElementById("contact-form")
-    .addEventListener("submit", function (event) {
-      event.preventDefault();
+      <div class="services-slider">
+        <div class="services-track" id="servicesTrack">
 
-      emailjs
-        .sendForm(
-          "YOUR_SERVICE_ID",
-          "YOUR_TEMPLATE_ID",
-          this
-        )
-        .then(
-          function () {
-            alert("Email sent successfully 🚀");
-          },
-          function (error) {
-            console.log("FAILED...", error);
-            alert("Failed to send email ❌");
-          }
-        );
-    });
-</script>
+          <!-- CARD 1 -->
+          <div class="service-card">
+            <img src="../Services/Services.jpg" alt="Service recommendations">
+            <div class="card-body">
+              <span>Services</span>
+              <h3>Recommendations</h3>
+              <p>Integer sagittis nisi nec tortor fermentum aliquet.</p>
+              <a href="#">Read Now</a>
+            </div>
+          </div>
 
-</body>
-</html>
+          <!-- CARD 2 -->
+          <div class="service-card">
+            <img src="../Services/Services1.jpg" alt="Horoscope matching">
+            <div class="card-body">
+              <span>Services</span>
+              <h3>Horoscope Matching</h3>
+              <p>Integer sagittis nisi nec tortor fermentum aliquet.</p>
+              <a href="#">Read Now</a>
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="service-card">
+            <img src="../Services/Services2.jpg" alt="Horoscope analysis">
+            <div class="card-body">
+              <span>Services</span>
+              <h3>Analysis of Horoscope</h3>
+              <p>Integer sagittis nisi nec tortor fermentum aliquet.</p>
+              <a href="#">Read Now</a>
+            </div>
+          </div>
+
+          <!-- CARD 4 -->
+          <div class="service-card">
+            <img src="../Services/Services3.jpg" alt="Detailed horoscope report">
+            <div class="card-body">
+              <span>Services</span>
+              <h3>Detailed Horoscope</h3>
+              <p>Integer sagittis nisi nec tortor fermentum aliquet.</p>
+              <a href="#">Read Now</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <button class="slider-btn next" onclick="slideServices(1)">❯</button>
+
+    </div>
+  </div>
+</section>
